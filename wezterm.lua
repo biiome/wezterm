@@ -62,11 +62,6 @@ config.colors = {
 	},
 }
 
--- config.window_frame = {
--- 	active_titlebar_bg = "#1a1b26",
--- 	inactive_titlebar_bg = "#1a1b26",
--- }
-
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -81,6 +76,11 @@ config.scrollback_lines = 5000
 config.adjust_window_size_when_changing_font_size = false
 
 -- New keybinds
+config.leader = {
+	key = "a",
+	mods = "CTRL",
+	timeout_milliseconds = 1000,
+}
 config.keys = {
 	{
 		key = "-",
@@ -106,6 +106,40 @@ config.keys = {
 		key = "n",
 		mods = "CTRL",
 		action = wezterm.action.ActivateTabRelative(1),
+	},
+	{
+		key = "l",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "h",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "j",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "k",
+		mods = "CTRL",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+
+	-- Ctrl+w to close pane with confirmation
+	{
+		key = "w",
+		mods = "CTRL",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+
+	-- Super+l to clear terminal
+	{
+		key = "l",
+		mods = "SUPER",
+		action = wezterm.action.SendKey({ key = "l", mods = "CTRL" }),
 	},
 }
 
