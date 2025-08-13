@@ -78,67 +78,62 @@ config.adjust_window_size_when_changing_font_size = false
 -- New keybinds
 config.leader = {
 	key = "a",
-	mods = "CTRL",
+	mods = "SUPER",
 	timeout_milliseconds = 1000,
 }
 config.keys = {
 	{
 		key = "-",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "/",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "t",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 	{
 		key = "w",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
-		key = "n",
-		mods = "CTRL",
-		action = wezterm.action.ActivateTabRelative(1),
-	},
-	{
 		key = "l",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "h",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "j",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "k",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 
 	-- Ctrl+w to close pane with confirmation
 	{
 		key = "w",
-		mods = "CTRL",
+		mods = "SUPER",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 
-	-- Super+l to clear terminal
+	-- Ctrl+l to clear terminal
 	{
 		key = "l",
-		mods = "SUPER",
+		mods = "CTRL",
 		action = wezterm.action.SendKey({ key = "l", mods = "CTRL" }),
 	},
 }
