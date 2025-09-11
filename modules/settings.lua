@@ -1,0 +1,8 @@
+local M = {}
+
+function M.apply_to_config(config, wezterm)
+	config.scrollback_lines = 5000
+	config.adjust_window_size_when_changing_font_size = false
+end
+
+return M
