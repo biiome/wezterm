@@ -21,8 +21,8 @@ function M.apply_to_config(config, wezterm)
 
 	-- Themes and Colours
 	config.color_scheme = "Tokyo Night (Gogh)"
-	config.window_background_opacity = 1.0
-	-- config.macos_window_background_blur = 50
+	-- config.window_background_opacity = 0.90
+	config.macos_window_background_blur = 30
 	config.text_background_opacity = 1.0
 	config.bold_brightens_ansi_colors = true
 
@@ -56,8 +56,6 @@ function M.apply_to_config(config, wezterm)
 				italic = true,
 			},
 		},
-		-- pane_focus_border = "#ff8800",
-		-- pane_border = "#444444",
 	}
 
 	-- Window
