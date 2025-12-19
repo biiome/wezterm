@@ -3,9 +3,14 @@
 local M = {}
 
 function M.apply_to_config(config, wezterm)
+	local mod = "SUPER"
+	if wezterm.target_triple:find("windows") then
+		mod = "ALT"
+	end
+
 	config.leader = {
 		key = "a",
-		mods = "SUPER",
+		mods = mod,
 		timeout_milliseconds = 1000,
 	}
 
@@ -13,46 +18,46 @@ function M.apply_to_config(config, wezterm)
 		-- Panes
 		{
 			key = "-",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
 		{
 			key = "/",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 		},
 		{
 			key = "w",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.CloseCurrentPane({ confirm = false }),
 		},
 
 		-- Pane Navigation
 		{
 			key = "l",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.ActivatePaneDirection("Right"),
 		},
 		{
 			key = "h",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.ActivatePaneDirection("Left"),
 		},
 		{
 			key = "j",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.ActivatePaneDirection("Down"),
 		},
 		{
 			key = "k",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.ActivatePaneDirection("Up"),
 		},
 
 		-- Tabs
 		{
 			key = "t",
-			mods = "SUPER",
+			mods = mod,
 			action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 		},
 

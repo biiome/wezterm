@@ -5,6 +5,8 @@ function M.apply_to_config(config, wezterm)
 	config.font = wezterm.font_with_fallback({
 		"JetBrainsMono Nerd Font",
 		"Fira Code",
+		"Cascadia Code",
+		"Consolas",
 	})
 	config.font_rules = {
 		{
@@ -23,6 +25,7 @@ function M.apply_to_config(config, wezterm)
 	config.color_scheme = "Tokyo Night (Gogh)"
 	-- config.window_background_opacity = 0.90
 	config.macos_window_background_blur = 30
+	config.win_window_background_blur = 30
 	config.text_background_opacity = 1.0
 	config.bold_brightens_ansi_colors = true
 
